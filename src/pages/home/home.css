@@ -32,17 +32,19 @@ font-weight: 700;
 
 }
 
- .row{
+ .categroislarleft  .cardslar .row{
   display: flex;
   align-items: center;
+  width: 200px;
   justify-content: space-between;
+  padding: 2px 20px;
 
  }
  .categroislarleft  .cardslar  .row p{
     font-size: 15px;
     font-weight: 400;
     text-align: start;
-    background-color: blue;
+
      display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +56,7 @@ font-weight: 700;
   align-items: center;
   justify-content: space-between;
     text-align: end;
-    background-color: red;
+
 }
 .categroislarleft  .cardslar .row:hover p{
 color: #46A358;
