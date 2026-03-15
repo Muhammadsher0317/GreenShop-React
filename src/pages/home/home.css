@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.categorslar .container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  padding: 40px 0px;
+}
+
+.categroislarleft h1{
+color: #3D3D3D;
+font-size: 18px;
+font-weight: 700;
+
+}
+.categroislarleft{
+    width: 310px;
+    height: 770px;
+    padding: 10px;
+    background-color: #FBFBFB;
+}
+.categorslarright{
+    width: 65%;
+
+}
+
+ .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+ }
+ .categroislarleft  .cardslar  .row p{
+    font-size: 15px;
+    font-weight: 400;
+    text-align: start;
+    background-color: blue;
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ .categroislarleft  .cardslar  .row span{
+       font-size: 15px;
+    font-weight: 400;
+     display: flex;
+  align-items: center;
+  justify-content: space-between;
+    text-align: end;
+    background-color: red;
+}
+.categroislarleft  .cardslar .row:hover p{
+color: #46A358;
+   font-size: 15px;
+    font-weight: 400;
+
+}
+.categroislarleft  .cardslar .row:hover span{
+color: #46A358;
+   font-size: 15px;
+    font-weight: 400;
+
+}
+.hugename{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3D3D3D;
+}
+.pricelar{
+    font-size: 15px;
+    font-weight: 700;
+    color: #3D3D3D;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+}
+.pricelar span{
+    color: #46A358;
+}
+.categroislarleft .filterlardas{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  background-color: #46A358;
+}
+.categroislarleft  .sizelar{
+    height: 100px;
+
+}
+ .sizelar h1{
+    font-size: 18px;
+    font-weight: 700;
+    color: #3D3D3D;
+ }
+ .sizelarrow{
+    padding: 10px 10px;
+ }
+ .sizelarrow h2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 400;
+    color: #3D3D3D;
+    margin-bottom: 10px;
+ }
+ .categroislarleft  .cardslar{
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-direction: column;
+   gap: 10px;
+   width: 200px;
+   height: 500;
+   gap: 10px;
+ }
+
+ .mainimgsla {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+ }
+ .categorslarrows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+ .categorlarlinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+ }
+ .categoryleft{
+    font-size: 16px;
+    font-weight: 400;
+ }
+ .categoryleft:hover{
+    color: #46A358;
+     font-size: 16px;
+    font-weight: 400;
+
+ }
+ .categorlarrightlar{
+    font-weight: 400;
+    font-size: 16px;
+    color: #3D3D3D;
+ }
+ .categorycards{
+    padding: 20px 0px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+ }
+
+.bottomlar .container {
+ display: flex;
+ align-items: end;
+ justify-content: end;
+ margin-bottom: 40px;
+}
+.kaktuslar .container{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   margin-bottom: 30px;
+}
+.bloging .container{
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-direction: column;
+   padding: 20px 0px;
+
+}
+.bloging h1{
+font-size: 30px;
+font-weight: 700;
+margin-bottom: 20px;
+color: #3D3D3D;
+}
+.bloging p{
+   font-size: 18px;
+   font-weight: 400;
+   color: #727272;
+   margin-bottom: 30px;
+
+}
+.blogingrow{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+}

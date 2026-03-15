@@ -1,0 +1,30 @@
+.Bloging{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.Bloging .dalarbloging{
+    font-size: 14px;
+    font-weight: 500;
+    color: #46A358;
+}
+.tiplariblogni{
+    font-size: 25px;
+    font-weight: 700;
+    color: #3D3D3D;
+   
+}
+.bloginfolar{
+    height: 188px;
+
+}
+.datalrp{
+    font-size: 12px;
+    font-weight: 400;
+    color: #727272;
+}
+.blogingbutton{
+    color: #46A358;
+ 
+}
