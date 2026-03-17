@@ -10,6 +10,7 @@ const NumberSpinner = ({ label, min = 0, max = 100, defaultValue = 1 }) => {
   const handleRemove = () => value > min && setValue(value - 1);
 
   return (
+  
     <Box>
       <Typography variant="body2">{label}</Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

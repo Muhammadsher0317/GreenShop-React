@@ -18,7 +18,7 @@ function Navbar() {
             <NavLink to={"/shop"}>Shop</NavLink>
            </li>
            <li>
-            <NavLink>Plant Care</NavLink>
+            <NavLink to={"/shoping_card"} >Shoping Cart</NavLink>
            </li>
            <li>
             <NavLink>

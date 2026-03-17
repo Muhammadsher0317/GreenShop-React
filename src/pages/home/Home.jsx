@@ -75,7 +75,7 @@ function Home() {
             </div>
             <img className="mainimgsla" src="/imgs/Super Sale Banner.svg" alt="" />
           </div>
-          <div className="categorslarright">
+          <div className="categorslarright">F
             <div className="categorslarrows">
               <div className="categorlarlinks">
                 <li>
