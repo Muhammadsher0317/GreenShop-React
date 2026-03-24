@@ -22,7 +22,7 @@ function Shop() {
   
   return (
     <div>
-      <Navbar />
+      
       <div className="shop_hero">
         <div className="container">
           <div className="entry_shop">
