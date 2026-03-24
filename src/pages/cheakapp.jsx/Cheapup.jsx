@@ -7,8 +7,7 @@ function Cheapup() {
   const [butondata, setbuttondata] = useState(false);
   return (
     <div className="checkupsalr">
-      <Navbar />
-      <Login/>
+     
 
       <div className="checkuplardan">
         <div className="container">
