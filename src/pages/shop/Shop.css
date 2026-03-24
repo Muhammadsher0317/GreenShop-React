@@ -21,6 +21,24 @@
   align-items: center;
   justify-content: start;
 }
+.smallimgs{
+  width: 500px;
+  height: 500px;
+
+}
+.smallimgs img{
+  width: 100px;
+  height: 100px;
+}
+.largeimg{
+  width: 500px;
+  height: 500px;
+
+}
+.largeimg img{
+  width: 100%;
+  height: 100%;
+}
 .mainbody_shop {
   display: flex;
   align-items: center;

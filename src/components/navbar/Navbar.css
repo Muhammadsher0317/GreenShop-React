@@ -4,8 +4,8 @@ nav .container{
     justify-content: space-between;
     padding: 20px 0px;
     border-bottom: 0.3px solid #21292380;
-    margin-bottom: 20px;
 
+    
 }
 nav img{
     width: 130px;
@@ -26,18 +26,8 @@ li a{
     color: #3D3D3D;
 
 }
-li a:hover{
-    font-weight: 700;
-}
-li a::after{
-content: "";
-position: absolute;
-bottom: -20px;
-width: 10px;
-height: 3px;
 
 
-}
 .btns{
     display: flex;
     align-items: center;

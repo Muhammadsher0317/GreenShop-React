@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Pricecontrolers from "../../components/Pricecontrolers";
 import Button from "@mui/material/Button";
@@ -7,10 +7,13 @@ import "./Shopin_cart.css";
 import Heroslider from "../../components/sliders/Heroslider";
 import Shop_slider from "../../components/sliders/Shop_slider";
 import Footer from "../../components/footer/Footer";
+import { DataContext } from "../../App";
+import { Link } from "react-router-dom";
 function Shoping_cards() {
+  const {carts}=useContext(DataContext)
   return (
     <>
-      <Navbar />
+     
       <div className="shopingcards">
         <div className="container">
           <h1 className="newlar">
@@ -26,11 +29,12 @@ function Shoping_cards() {
               </div>
 
               <div className="productlarpriceleftcards">
-                <div className="productlarpriceleftcards_row">
+                {carts.map((item)=>{
+                  return <div className="productlarpriceleftcards_row">
                   <div className="imgwithnames">
-                    <img src="/imgs/productimg.svg" alt="" />
+                    <img src={item.img} alt="" />
                     <div className="nameswith_number">
-                      <h2>Barberton Daisy</h2>
+                      <h2>{item.title}</h2>
                       <h3>
                         <span>SKU: </span> 1995751877966
                       </h3>
@@ -39,61 +43,13 @@ function Shoping_cards() {
 
                   <span className="nameswithprice">$119.00</span>
                   <Pricecontrolers color="#46A358" />
-                  <span>$238.00</span>
+                  <span>{item.price}</span>
 
                   <DeleteOutlinedIcon />
                 </div>
-                <div className="productlarpriceleftcards_row">
-                  <div className="imgwithnames">
-                    <img src="/imgs/productimg.svg" alt="" />
-                    <div className="nameswith_number">
-                      <h2>Barberton Daisy</h2>
-                      <h3>
-                        <span>SKU: </span> 1995751877966
-                      </h3>
-                    </div>
-                  </div>
-
-                  <span className="nameswithprice">$119.00</span>
-                  <Pricecontrolers color="#46A358" />
-                  <span>$238.00</span>
-
-                  <DeleteOutlinedIcon />
-                </div>
-                <div className="productlarpriceleftcards_row">
-                  <div className="imgwithnames">
-                    <img src="/imgs/productimg.svg" alt="" />
-                    <div className="nameswith_number">
-                      <h2>Barberton Daisy</h2>
-                      <h3>
-                        <span>SKU: </span> 1995751877966
-                      </h3>
-                    </div>
-                  </div>
-
-                  <span className="nameswithprice">$119.00</span>
-                  <Pricecontrolers color="#46A358" />
-                  <span>$238.00</span>
-
-                  <DeleteOutlinedIcon />
-                </div>
-                <div className="productlarpriceleftcards_row">
-                  <div className="imgwithnames">
-                    <img src="/imgs/productimg.svg" alt="" />
-                    <div className="nameswith_number">
-                      <h2>Barberton Daisy</h2>
-                      <h3>
-                        <span>SKU: </span> 1995751877966
-                      </h3>
-                    </div>
-                  </div>
-
-                  <span className="nameswithprice">$119.00</span>
-                  <Pricecontrolers color="#46A358" />
-                  <span>$238.00</span>
-
-                  <DeleteOutlinedIcon />
-                </div>
+                
+                })}
+                
               </div>
             </div>
             <div className="productprice_right">
@@ -126,7 +82,10 @@ function Shoping_cards() {
                   <h1>Total</h1>
                   <span>$2,699.00</span>
                 </div>
-                <Button color="success" className="procedbutton" variant="contained">Proceed To Checkout</Button>
+                <Link to={"/cheapup"} >
+                <Button  color="success"  className="procedbutton" variant="contained">Proceed To Checkout</Button>
+                </Link>
+                
                 <Button color="success" className="continueshoping" variant="text">Continue Shopping</Button>
               </div>
             </div>

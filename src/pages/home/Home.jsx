@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Heroslider from "../../components/sliders/Heroslider";
 import { Slider } from "@mui/material";
@@ -12,10 +12,17 @@ import Imglarwithflower from "../../components/Imglarwithflower";
 import { BiLogoBing } from "react-icons/bi";
 import Bloging from "../../components/Bloging";
 import Footer from "../../components/footer/Footer";
+import { DataContext } from "../../App";
+import Login from "../../components/Login";
+
 function Home() {
+
+const {data}=useContext(DataContext);
+
   return (
     <>
-      <Navbar />
+      
+      
       <Heroslider />
 
       <div className="categorslar">
@@ -75,7 +82,7 @@ function Home() {
             </div>
             <img className="mainimgsla" src="/imgs/Super Sale Banner.svg" alt="" />
           </div>
-          <div className="categorslarright">F
+          <div className="categorslarright">
             <div className="categorslarrows">
               <div className="categorlarlinks">
                 <li>
@@ -93,15 +100,14 @@ function Home() {
               </div>
             </div>
             <div className="categorycards">
-              <Cards/>
-              <Cards/>
-              <Cards/>
-              <Cards/>
-              <Cards/>
-              <Cards/>
-               <Cards/>
-               <Cards/>
-                <Cards/>
+              
+              {
+               data.map((info)=>{
+                return <Cards info={info} />
+               })
+              }
+             
+             
 
             </div>
           </div>
@@ -141,6 +147,7 @@ function Home() {
           <Footer/>
     </>
   );
+
 }
 
 export default Home;

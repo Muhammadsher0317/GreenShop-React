@@ -1,16 +1,25 @@
 import Navbar from "../../components/navbar/Navbar";
 import Rating from "@mui/material/Rating";
-import Stack from "@mui/material/Stack";
+
 import "./Shop.css";
 import { Button, Chip } from "@mui/material";
 import Pricecontrolers from "../../components/Pricecontrolers";
-import { HeartBrokenOutlined } from "@mui/icons-material";
-import { CiHeart, CiMail } from "react-icons/ci";
+
+import {  CiMail } from "react-icons/ci";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { BiHeart } from "react-icons/bi";
 import Shop_slider from "../../components/sliders/Shop_slider";
 import Footer from "../../components/footer/Footer";
+import { Link,  useParams } from "react-router-dom";
+import { useContext } from "react";
+import { DataContext } from "../../App";
+
 function Shop() {
+  const { id } = useParams();
+  const { data } = useContext(DataContext);
+
+  const filterData = data?.find((item) => item.id == id);
+  
   return (
     <div>
       <Navbar />
@@ -24,19 +33,19 @@ function Shop() {
           <div className="mainbody_shop">
             <div className="imglarrowlashop">
               <div className="smallimgs">
-                <img src="/imgs/smalimgone.svg" alt="" />
-                <img src="/imgs/smallimgtwo.svg" alt="" />
-                <img src="/imgs/smalimhthree.svg" alt="" />
-                <img src="/imgs/smallimgfour.svg" alt="" />
+                <img src={filterData?.imgs?.[0]} alt="" />
+                <img src={filterData?.imgs?.[1]} alt="" />
+                <img src={filterData?.imgs?.[2]} alt="" />
+                <img src={filterData?.imgs?.[3]} alt="" />
               </div>
               <div className="largeimg">
-                <img src="/imgs/mainimghuge.svg" alt="" />
+                <img src={filterData?.mainImg} alt="" />
               </div>
             </div>
             <div className="imgrowinfoshop">
-              <h1>Barberton Daisy</h1>
+              <h1>{filterData?.category}</h1>
               <div className="starsrow_shop">
-                <span className="shop_price">$119.00</span>
+                <span className="shop_price">{filterData?.price}$</span>
                 <div className="onthestarrow">
                   <Rating
                     name="half-rating"
@@ -47,12 +56,7 @@ function Shop() {
                 </div>
               </div>
               <h3 className="shop_description">Short Description:</h3>
-              <p className="descriptionshop">
-                The ceramic cylinder planters come with a wooden stand to help
-                elevate your plants off the ground. The ceramic cylinder
-                planters come with a wooden stand to help elevate your plants
-                off the ground.
-              </p>
+              <p className="descriptionshop">{filterData.desc}</p>
               <h2 className="sizelar_shop">Size:</h2>
               <div className="row_shoplarchip">
                 <Chip className="labelone" color="#46A358" label="S" />
@@ -66,14 +70,18 @@ function Shop() {
                   <Button variant="contained" color="success">
                     Buy NOW
                   </Button>
-                  <Button variant="outlined" color="success">
+                  <Link  to={`/shoping_card`}>
+                  <Button variant="outlined"  
+                  color="success">
                     Add to cart
                   </Button>
+                  </Link>
 
                   <Button
                     className="heartone"
                     variant="outlined"
                     color="success"
+                    
                   >
                     <BiHeart />
                   </Button>
@@ -114,10 +122,8 @@ function Shop() {
             fringilla augue nec est tristique auctor. Donec non est at libero
             vulputate rutrum. Morbi ornare lectus quis justo gravida semper.
             Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.
-            
             <br />
             <br />
-       
             Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat
             sem, quis fermentum turpis eros eget velit. Donec ac tempus ante.
             Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis
@@ -156,13 +162,12 @@ function Shop() {
       <div className="realtedproduct_shop">
         <div className="container">
           <h1 className="realted_name">Releted Products</h1>
-       <div className="shopsliderlar">
-           <Shop_slider/>
-       </div>
+          <div className="shopsliderlar">
+            <Shop_slider />
+          </div>
         </div>
       </div>
-      <Footer/>
-    
+      <Footer />
     </div>
   );
 }

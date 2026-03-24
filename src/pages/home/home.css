@@ -181,6 +181,7 @@ color: #46A358;
    justify-content: space-between;
    gap: 10px;
    margin-bottom: 30px;
+   height: 70vh;
 }
 .bloging .container{
    display: flex;

@@ -4,7 +4,7 @@ import { FaCartShopping } from 'react-icons/fa6'
 import { NavLink } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import "./Navbar.css"
-function Navbar() {
+function Navbar({ setloginopen }) {
   return (
    <>
    <nav>
@@ -15,7 +15,7 @@ function Navbar() {
             <NavLink to={"/"}>Home</NavLink>
            </li>
            <li>
-            <NavLink to={"/shop"}>Shop</NavLink>
+            <NavLink >Shop</NavLink>
            </li>
            <li>
             <NavLink to={"/shoping_card"} >Shoping Cart</NavLink>
@@ -30,7 +30,10 @@ function Navbar() {
              <FaSearch />
              <FaCartShopping />
              
-             <Button variant="contained">Login</Button>
+             <Button
+             onClick={()=>{
+                setloginopen(true)
+             }} variant="contained">Login</Button>
         </div>
 
     </div>

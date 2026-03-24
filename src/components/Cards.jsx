@@ -3,44 +3,43 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Sahifalararo o'tish uchun
+
 import "./Cards.css";
-
-function Cards() {
-  const navigate = useNavigate();
-
-  // Shop sahifasiga o'tish funksiyasi
-  const handleGoToShop = () => {
-    navigate("/shop"); 
-  };
-
-  // Ikonkalar bosilganda Card-ni click hodisasi ishlab ketmasligi uchun
-  const handleIconClick = (e) => {
-    e.stopPropagation(); // Bu juda muhim! Card-ning onClick-ini to'xtatadi.
-    console.log("Ikonka bosildi, lekin Shopga o'tmadi.");
-  };
+import { DataContext } from "../App";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+function Cards({ info }) {
+  const { carts, setcarts } = useContext(DataContext);
 
   return (
-    <Card className="plant-card" onClick={handleGoToShop} style={{ cursor: 'pointer' }}>
+    <Link to={`/shop/${info.id}`} className="plant-card">
       <div className="img-box">
-        <CardMedia
-          component="img"
-          image="/imgs/cards.svg"
-          alt="plant"
-        />
+        <CardMedia component="img" image={info.mainImg} alt="plant" />
 
         <div className="icons">
-          <FaShoppingCart onClick={handleIconClick} />
-          <FaHeart onClick={handleIconClick} />
-          <FaSearch onClick={handleIconClick} />
+          <FaShoppingCart
+            onClick={(e) => {
+              e.preventDefault();
+              const obj = {
+                id: Math.floor(Math.random() * 9999),
+                img: info.mainImg,
+                title: info.category,
+                price: info.price,
+                count: 1,
+              };
+              setcarts([...carts, obj]);
+            }}
+          />
+          <FaHeart />
+          <FaSearch />
         </div>
       </div>
 
       <CardContent className="card-info">
-        <Typography variant="h6">Barberton</Typography>
-        <Typography className="price">$119.00</Typography>
+        <Typography variant="h6">{info.category}</Typography>
+        <Typography className="price">{info.price}</Typography>
       </CardContent>
-    </Card>
+    </Link>
   );
 }
 
